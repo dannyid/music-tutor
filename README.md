@@ -1,7 +1,7 @@
 Music Tutor
 ===========
 
-A music tutor web app built on [vexflow](http://www.vexflow.com/)/[React](https://facebook.github.io/react/)/[Redux](http://redux.js.org/)/[react-router](https://github.com/reactjs/react-router)/[webpack](https://webpack.github.io/)
+A music tutor web app built on [VexFlow](http://www.vexflow.com/)/[React](https://facebook.github.io/react/)/[Redux](http://redux.js.org/)/[react-router](https://github.com/reactjs/react-router)/[webpack](https://webpack.github.io/)
 
 ## To get started
 
