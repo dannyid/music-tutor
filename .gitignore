@@ -1,0 +1,5 @@
+.DS_Store
+*.pyc
+node_modules/*
+static/bundle/*
+.idea
