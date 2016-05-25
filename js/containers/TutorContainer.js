@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
     topNotes: state.topNotes,
     bottomNotes: state.bottomNotes,
     timeSig: state.timeSig,
-    keySig: state.keySig,
+    keySig: state.keySig
   }
 };
 

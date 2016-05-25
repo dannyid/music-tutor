@@ -1,6 +1,5 @@
 import React from 'react';
 import Vex from 'vexflow';
-import { setTimeSig, setKeySig } from '../actions/actions';
 
 const Tutor = React.createClass({
   propTypes: {
@@ -20,14 +19,14 @@ const Tutor = React.createClass({
     this.canvas = this.refs.canvas;
     this.renderer = new Vex.Flow.Renderer(this.canvas, Vex.Flow.Renderer.Backends.SVG);
     this.ctx = this.renderer.getContext();
-    this.redraw();
+    // this.redraw();
     this.addNotes(); // Need this second draw because of a VexFlow bug in rendering the brace a second time
     setTimeout(() => {
       this.props.setTimeSig('3/4');
-    }, 2000)
+    }, 2000);
     setTimeout(() => {
       this.props.setKeySig('Eb');
-    }, 4000)
+    }, 4000);
   },
 
   componentDidUpdate() {
@@ -52,7 +51,7 @@ const Tutor = React.createClass({
     // This part is only to get the width including the key signature
     // to be used below
     this.topStaff = new Vex.Flow.Stave(20, 0, this.staveWidth)
-      .addClef("treble")
+      .addClef('treble')
       .addTimeSignature(this.props.timeSig)
       .addKeySignature(this.props.keySig)
       .setContext(this.ctx)
@@ -68,14 +67,14 @@ const Tutor = React.createClass({
 
     // Now put real staves in with offset included in staff width
     this.topStaff = new Vex.Flow.Stave(20, 0, this.staveWidth + this.offsetX)
-      .addClef("treble")
+      .addClef('treble')
       .addTimeSignature(this.props.timeSig)
       .addKeySignature(this.props.keySig)
       .setContext(this.ctx)
       .draw();
 
     this.bottomStaff = new Vex.Flow.Stave(20, 100, this.staveWidth + this.offsetX)
-      .addClef("bass")
+      .addClef('bass')
       .addTimeSignature(this.props.timeSig)
       .addKeySignature(this.props.keySig)
       .setContext(this.ctx)
@@ -108,7 +107,7 @@ const Tutor = React.createClass({
       num_beats: 1,
       beat_value: 4,
       resolution: Vex.Flow.RESOLUTION
-    })
+    });
 
     this.topVoice.addTickables(this.props.topNotes);
     this.bottomVoice.addTickables(this.props.bottomNotes);
@@ -130,17 +129,17 @@ const Tutor = React.createClass({
     this.props.setTopNotes([
       new Vex.Flow.StaveNote({
         keys: ['c/4', 'e/4', 'g/4'],
-        duration: "q",
+        duration: 'q',
         auto_stem: true
-      }),
+      })
     ]);
     this.props.setBottomNotes([
       new Vex.Flow.StaveNote({
         clef: 'bass',
         keys: ['c/4', 'e/4', 'g/4'],
-        duration: "q",
+        duration: 'q',
         auto_stem: true
-      }),
+      })
     ]);
   },
 
